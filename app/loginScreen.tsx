@@ -1,6 +1,6 @@
 import { Image } from 'expo-image';
 import { View, StyleSheet, Text } from 'react-native';
-import Button from '@/components/Button'
+import Button from '@/components/ui/Button'
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
@@ -14,6 +14,7 @@ export default function LoginScreen() {
 
   const handlerValidadeUser = () =>{
     console.log("VALidade  USER")
+
   }
 
   return (

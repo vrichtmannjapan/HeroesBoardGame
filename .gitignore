@@ -25,7 +25,8 @@ dist-ssr
 
 node_modules/
 
-.next
 
+.next
+    
 expo-env.d.ts
 # @end expo-cli

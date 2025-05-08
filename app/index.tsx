@@ -1,6 +1,6 @@
 import { Image } from 'expo-image';
 import { View, StyleSheet } from 'react-native';
-import Button from '@/components/Button'
+import Button from '@/components/ui/Button'
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
@@ -27,7 +27,7 @@ export default function HomeScreen() {
         />
       }>
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type='title' style={styles.textLogo} >Welcome {'\n'}Heroes 3 board game!</ThemedText>
+        {/* <ThemedText type='title' style={styles.textLogo} >Welcome {'\n'}Heroes 3 board game!</ThemedText> */}
       </ThemedView>
 
       <View>
