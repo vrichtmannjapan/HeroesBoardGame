@@ -13,8 +13,12 @@ export default function LoginScreen() {
   const [password, setPassword] = useState('')
 
   const handlerValidadeUser = () =>{
-    console.log("VALidade  USER")
 
+    if(username == "vrichtmann" && password == "P1u2t3o4"){
+      alert("LOGOU!")
+    }
+    console.log("username : ", username)
+    console.log("password : ", password)
   }
 
   return (
