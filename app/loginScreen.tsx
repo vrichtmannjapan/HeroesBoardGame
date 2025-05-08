@@ -9,49 +9,16 @@ import Input from '@/components/Input'
 
 export default function LoginScreen() {
 
-  const [username, setUsername] = useState<string>('')
-  const [password, setPassword] = useState<string>('')
-
-  const [usernameError, setUsernameError] = useState<string>('')
-  const [passwordError, setPasswordError] = useState<string>('')
-
-  const [correctParameters, setCorrectParameters] = useState<boolean>(false)
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
 
   const handlerValidadeUser = () =>{
-    let isValid = true;
 
-    if(username.trim() === ''){
-      setUsernameError('Username obrigatorio')
-      isValid = false;
-    }else{
-      setPasswordError('')
+    if(username == "vrichtmann" && password == "P1u2t3o4"){
+      alert("LOGOU!")
     }
-
-    if(password.trim() === ''){
-      setPasswordError('Password obrigatorio')
-      isValid = false;
-    }else{
-      setPasswordError('')
-    }
-
-    if(isValid){
-      if(username == "vrichtmann" && password == "P1u2t3o4"){
-        setCorrectParameters(true)
-      }else{
-        setPassword('')
-        setPasswordError('Usuario ou senha estao incorretos')
-      }
-    }
-  }
-
-  const  onUsernameChange = (text:string) =>{
-    setUsername(text)
-    setUsernameError('')
-  }
-
-  const onPasswordChange = (text:string) =>{
-    setPassword(text)
-    setPasswordError('')
+    console.log("username : ", username)
+    console.log("password : ", password)
   }
 
   return (
@@ -72,19 +39,15 @@ export default function LoginScreen() {
         <ThemedText >Username</ThemedText>
         <Input
           placeholder="Username"
-          value={username}
-          onChangeText={onUsernameChange}
-          error={usernameError}
-          correct={correctParameters}
+          value={username} 
+          onChangeText={setUsername}
         />
 
         <ThemedText >Password</ThemedText>
         <Input
           placeholder="Password"
-          value={password}
-          onChangeText={onPasswordChange}
-          error={passwordError}
-          correct={correctParameters}
+          value={password} 
+          onChangeText={setPassword}
         />
 
         <Button title="Login" style={{marginTop: 30}} onPress={handlerValidadeUser}/>
