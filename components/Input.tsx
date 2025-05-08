@@ -1,15 +1,22 @@
 import React from 'react';
-import { TextInput, StyleSheet, View, TextInputProps } from 'react-native';
+import { TextInput, StyleSheet, View, TextInputProps, Text } from 'react-native';
 
-type InputProps = TextInputProps;
+type InputProps = TextInputProps & {
+  error?: string
+  correct?:boolean
+};
 
-const Input = (props: InputProps) => {
+const Input = ({error, correct,  ...props} : InputProps) => {
   return (
     <View style={styles.container}>
       <TextInput
-        style={styles.input}
+          style={[styles.input,
+            error && styles.error,
+            correct && styles.correct
+          ]}
         {...props}
       />
+       {error ? <Text style={styles.error}>{error}</Text> : null}
     </View>
   );
 };
@@ -28,6 +35,14 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#000',
   },
+  error:{
+    color: 'red',
+    marginTop: 4,
+    fontSize: 14
+  },
+  correct:{
+    backgroundColor: '#f5efb3',
+  }
 });
 
 export default Input;
