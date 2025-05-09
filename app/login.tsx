@@ -1,13 +1,18 @@
 import { Image } from 'expo-image';
 import { View, StyleSheet, Text } from 'react-native';
 import Button from '@/components/ui/Button'
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+import ParallaxScrollView from '@/components/ui/ParallaxScrollView';
+import { ThemedText } from '@/components/ui/ThemedText';
+import { ThemedView } from '@/components/ui/ThemedView';
 import React, { useState } from 'react';
-import Input from '@/components/Input'
+import Input from '@/components/ui/Input'
+import { router, useRouter } from 'expo-router';
+import {useAuth} from '@/context/authcontext'
 
 export default function LoginScreen() {
+
+  const {login} = useAuth()
+
   const [username, setUsername] = useState<string>('')
   const [password, setPassword] = useState<string>('')
 
@@ -36,6 +41,8 @@ export default function LoginScreen() {
     if(isValid){
       if(username == "vrichtmann" && password == "P1u2t3o4"){
         setCorrectParameters(true)
+        login()
+        router.replace('/home')
       }else{
         setPassword('')
         setPasswordError('Usuario ou senha estao incorretos')
