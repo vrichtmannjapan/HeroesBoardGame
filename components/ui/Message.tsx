@@ -1,10 +1,15 @@
 import { View, Text, StyleSheet } from "react-native";
 
-export default function Message(){
+type MessageProps = {
+  username?: string;
+  message?: string;
+}
+
+export default function Message({username, message}: MessageProps) {
   return(
     <View style={styles.textContainer}>
-      <Text style={styles.username}>UserName : </Text>
-      <Text style={styles.message}>Message</Text>
+      <Text style={styles.username}>{username} : </Text>
+      <Text style={styles.message}>{message}</Text>
     </View>
   )
 }

@@ -1,16 +1,37 @@
 import {StyleSheet, View, Text, TouchableOpacity} from "react-native";
-import {Button, IconButton, TextInput} from 'react-native-paper';
+import {IconButton, TextInput} from 'react-native-paper';
 import Message from '@/components/ui/Message'
+import { useState } from "react";
 
 export default function ChatBox(){
+  const [inputMessage, setInputMessage] = useState<string>('');
+  const [massages, setMessages] = useState<string[]>([]);
+
+  const sendMenssage = (message: string) => {
+    if (message.trim() !== '') {
+      setMessages([...massages, message]);
+    }
+    setInputMessage('')
+  };
+
+  const onChangeMessage = (text: string) => {
+    setInputMessage(text);
+  };
+
   return(
     <View style={styles.chatbox}>
       <View style={styles.chat}>
-          <Message/>
+          {
+            massages.map((message, index) => (
+              <Message key={index} username="Vrichtmann" message={message} />
+            ))
+          }
       </View>
       <View style={styles.chatMessage}>
         <View style={styles.containerButton}>
           <TextInput
+           onChangeText={onChangeMessage}
+           value={inputMessage}
            style={[styles.input]}
            placeholder="Type your message"
            placeholderTextColor="#aaa"
@@ -22,6 +43,7 @@ export default function ChatBox(){
           />
           <TouchableOpacity activeOpacity={0.7} style={styles.sendContainer} onPress={() => {}}>
             <IconButton
+              onPress={() => sendMenssage(inputMessage)}
               icon="send"
               mode="contained"
               containerColor="rgba(0, 123, 255, 0.57)"

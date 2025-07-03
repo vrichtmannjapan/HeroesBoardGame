@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "59573050114",
+    "project_id": "heroes-boardgame",
+    "storage_bucket": "heroes-boardgame.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:59573050114:android:08335bbdf756972d66001b",
+        "android_client_info": {
+          "package_name": "com.vrichtmann.heroes"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUMKtwBYT-f-HIms38DX2B7_Qhc_anu1o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:59573050114:android:4275737f2d11dca966001b",
+        "android_client_info": {
+          "package_name": "vom.vrichtmann.heroesBoardgame"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUMKtwBYT-f-HIms38DX2B7_Qhc_anu1o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

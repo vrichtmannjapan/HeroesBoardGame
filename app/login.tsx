@@ -39,7 +39,7 @@ export default function LoginScreen() {
     }
 
     if(isValid){
-      if(username == "vrichtmann" && password == "P1u2t3o4"){
+      if(username === "vrichtmann" && password === "P1u2t3o4"){
         setCorrectParameters(true)
         login()
         router.replace('/home')
